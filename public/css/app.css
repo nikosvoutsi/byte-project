@@ -61,7 +61,8 @@ button{
 
 .alert{
     position:absolute;
-    top:20%;
+    top:22%;
+    margin-left:10vw;
 }
 
 .add-candidate, .add-candidate:hover{
