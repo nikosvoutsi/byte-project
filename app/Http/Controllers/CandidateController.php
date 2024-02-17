@@ -20,12 +20,12 @@ class CandidateController extends Controller
 
         if($jobIds){
              // Query candidates based on selected jobs
-            $candidates = Candidate::with('degree')->whereHas('jobApplications', function ($query) use ($jobIds) {
+            $candidates = Candidate::with('degree')->orderBy('updated_at', 'desc')->whereHas('jobApplications', function ($query) use ($jobIds) {
              $query->whereIn('job_id', $jobIds);
            })->paginate(5);
         }else{
             // Fetch all candidates from the database
-            $candidates = Candidate::with('degree')->paginate(5);
+            $candidates = Candidate::with('degree')->orderBy('updated_at', 'desc')->paginate(5);
         }
 
              
