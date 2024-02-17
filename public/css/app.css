@@ -49,6 +49,9 @@ table{
     color: rgb(236, 224, 201); /* White text color */
 }
 
+.table .thead-dark th{
+    color: rgb(236, 224, 201); /* White text color */
+}
 
 img{
     width:15px;
