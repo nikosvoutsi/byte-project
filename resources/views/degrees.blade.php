@@ -93,9 +93,9 @@
                     
 
                     <!-- Add other form fields here -->
-                    <div class="modal-footer">
-                        <button type="submit" class="btn submit">Submit</button>
+                    <div class="modal-footer">  
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -122,8 +122,8 @@
                 <form action="{{ route('degree.delete', ['id' => $degree->id]) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>
         </div>
@@ -154,9 +154,9 @@
                         <input type="text" class="form-control" id="degreeTitle" name="degreeTitle" required>
                     </div>
                     
-                    <div class="modal-footer">
-                        <button type="submit" class="btn submit">Add Degree</button>
+                    <div class="modal-footer">         
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn submit">Add Degree</button>
                     </div>
                 </form>
             </div>

@@ -6,6 +6,8 @@
     <title>Byte Project</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/byte_logo.jpg') }}" type="image/x-icon" />
+
     <!-- Bootstrap JS (place this before the closing </body> tag) -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
