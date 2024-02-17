@@ -125,7 +125,10 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn search">Search</button>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn search">Search</button>
+                    </div>
+                    
                 </form>
             </div>
         </div>
@@ -199,8 +202,8 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" class="btn submit">Submit</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn submit">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -227,8 +230,8 @@
                     <form action="{{ route('candidates.delete', ['id' => $candidate->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>
             </div>
@@ -300,8 +303,8 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn submit">Add Candidate</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn submit">Add Candidate</button>
                     </div>
                     
                 </form>
