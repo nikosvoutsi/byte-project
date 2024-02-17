@@ -83,16 +83,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Add your form fields here -->
                 <form action="{{ route('degrees.edit', ['id' => $degree->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="degreeTitle">Degree Title</label>
                         <input type="text" class="form-control" id="degreeTitle" name="degreeTitle" value="{{ $degree->degreeTitle }}">
                     </div>
-                    
-
-                    <!-- Add other form fields here -->
+    
                     <div class="modal-footer">  
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn submit">Submit</button>
@@ -147,8 +144,6 @@
                 <!-- Add Degree Form -->
                 <form action="{{ route('degree.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <!-- Add your form fields here -->
-                    <!-- Example fields, customize as needed -->
                     <div class="form-group">
                         <label for="firstname">Degree Title</label>
                         <input type="text" class="form-control" id="degreeTitle" name="degreeTitle" required>

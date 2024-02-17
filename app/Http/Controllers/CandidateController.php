@@ -78,15 +78,14 @@ class CandidateController extends Controller
             $candidate->update([
                 'applicationDate' => $applicationDate,
             ]);
-
-            // Delete previous resume files
-            $candidateFolder = 'resumes/' . $id;
-            if (Storage::exists($candidateFolder)) {
-                Storage::deleteDirectory($candidateFolder);
-            }
+            
 
             // Store new resume file
             if ($request->hasFile('resume')) {
+                $candidateFolder = 'resumes/' . $id;
+                if (Storage::exists($candidateFolder)) {
+                    Storage::deleteDirectory($candidateFolder);
+                }
                 $resumeName = $request->file('resume')->getClientOriginalName();
                 $request->file('resume')->storeAs($candidateFolder, $resumeName);
                 $candidate->update(['resume' => $resumeName]);
@@ -142,16 +141,25 @@ class CandidateController extends Controller
     }
 
     public function delete($id)
-    {
-        try {
-            $candidate = Candidate::findOrFail($id);
-            $candidate->delete();
+{
+    try {
+        $candidate = Candidate::findOrFail($id);
 
-            return redirect()->route('index')->with('success', 'The candidate ' . $candidate->name . ' ' . $candidate->surname . ' deleted successfully');
-        } catch (\Exception $e) {
-            return redirect()->route('index')->with('error', 'Failed to delete the candidate.');
+        // Delete the storage folder associated with the candidate
+        $candidateFolder = 'resumes/' . $candidate->id;
+        if (Storage::exists($candidateFolder)) {
+            Storage::deleteDirectory($candidateFolder);
         }
+
+        // Delete the candidate from the database
+        $candidate->delete();
+
+        return redirect()->route('index')->with('success', 'The candidate ' . $candidate->name . ' ' . $candidate->surname . ' deleted successfully');
+    } catch (\Exception $e) {
+        return redirect()->route('index')->with('error', 'Failed to delete the candidate.');
     }
+}
+
 
     public function store(Request $request)
 {

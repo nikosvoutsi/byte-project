@@ -251,8 +251,7 @@
                 <!-- Add Candidate Form -->
                 <form action="{{ route('candidates.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <!-- Add your form fields here -->
-                    <!-- Example fields, customize as needed -->
+
                     <div class="form-group">
                         <label for="firstname">First Name</label>
                         <input type="text" class="form-control" id="firstname" name="firstname" required>
@@ -269,7 +268,7 @@
                         <label for="mobile">Mobile</label>
                         <input type="text" class="form-control" id="mobile" name="mobile">
                     </div>
-                    <!-- Resume upload -->
+
                     <div class="form-group">
                         <label for="resume">Resume</label>
                         <input type="file" class="form-control-file" id="resume" name="resume">
@@ -279,7 +278,7 @@
                         <input type="date" class="form-control" id="applicationDate" name="applicationDate">
                     </div>
                     
-                    <!-- Jobs dropdown -->
+   
                     <div class="form-group">
                         <label for="jobs">Jobs Applied For</label>
                         <select class="form-control" id="jobs" name="jobs[]" multiple required>
@@ -289,7 +288,7 @@
                         </select>
                     </div>
 
-                    <!-- Degree dropdown -->
+       
                     <div class="form-group">
                         <label for="degree">Degree</label>
                         <select class="form-control" id="degree" name="degree" required>
@@ -311,14 +310,14 @@
     </div>
 </div>
 
-<!-- JavaScript to update job selection based on URL query parameters -->
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Get the current URL query parameters
+
         const urlParams = new URLSearchParams(window.location.search);
         const selectedJobs = urlParams.getAll("jobs[]");
 
-        // Update the job selection in the dropdown
+
         const jobDropdown = document.getElementById("jobs");
         if (selectedJobs.length > 0) {
             selectedJobs.forEach((jobId) => {
@@ -330,9 +329,8 @@
         }
     });
 
-    // Event handling for the filter button
     document.getElementById("filters-button").addEventListener("click", function () {
-        // Add your custom logic here if needed
+
     });
 </script>
 
